@@ -1,10 +1,21 @@
+import string
+
 # Global variables
-possibleCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 initialPosition = 0
 shiftedPosition = 0
 shiftedMessage = ""
+lettersLower = string.ascii_lowercase
+lettersUpper = string.ascii_uppercase
+numbers = string.digits
+symbols = string.punctuation
+possibleCharacters = lettersLower + lettersUpper + numbers + symbols
 
 # Define the function called encryptOrDecrypt
+def encryptOrDecrypt():
+    if mode.lower() == "encrypt":
+        shiftedPosition = initialPosition + key
+    elif mode.lower() == "decrypt":
+        shiftedPosition = initialPosition - key
 
 # Define the function called wraparound
 
@@ -22,5 +33,17 @@ mode = input("Do you want to encrypt or decrypt? ")
 for character in initialMessage:
     if character in possibleCharacters:
         initialPosition = possibleCharacters.find(character)
+        encryptOrDecrypt()
 
-        if mode.lower() == "encrypt":
+        if shiftedPosition >= len(possibleCharacters):
+            shiftedPosition = shiftedPosition - len(possibleCharacters)
+        elif shiftedPosition < 0:
+            shiftedPosition = shiftedPosition + len(possibleCharacters)
+
+        shiftedMessage = shiftedMessage + possibleCharacters[shiftedPosition]
+
+    else:
+        shiftedMessage = shiftedMessage + character
+
+# Print the shifted message
+print("Your " + mode.lower() + "ed message is: " + shiftedMessage)
