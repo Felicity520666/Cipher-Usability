@@ -21,10 +21,7 @@ def encryptOrDecrypt():
 # Define the function called wraparound
 def wraparound():
     global shiftedPosition
-    if shiftedPosition >= len(possibleCharacters):
-        shiftedPosition = shiftedPosition - len(possibleCharacters)
-    elif shiftedPosition < 0:
-        shiftedPosition = shiftedPosition + len(possibleCharacters)
+    shiftedPosition = shiftedPosition % len(possibleCharacters)
 
 # Run code
 
@@ -33,8 +30,23 @@ print("Welcome! This program will encrypt or decrypt your secret message using t
 
 # Receive user input
 initialMessage = input("What is your message? ")
-key = int(input("What is the key? Choose a number from 0 to 93. "))
-mode = input("Do you want to encrypt or decrypt? ")
+
+while True:
+    try:
+        key = int(input("What is the key? Choose a number from 0 to 93. "))
+        if 0 <= key <= 93:
+            break
+        else:
+            print("Please enter a number between 0 and 93.")
+    except ValueError:
+        print("Invalid input. Please enter a whole number.")
+
+while True:
+    mode = input("Do you want to encrypt or decrypt? ").lower()
+    if mode in ("encrypt", "decrypt"):
+        break
+    else:
+        print("Please type 'encrypt' or 'decrypt'.")
 
 # Encrypt or decrypt the message
 for character in initialMessage:
@@ -49,4 +61,4 @@ for character in initialMessage:
         shiftedMessage = shiftedMessage + character
 
 # Print the shifted message
-print("Your " + mode.lower() + "ed message is: " + shiftedMessage)
+print("Your " + mode + "ed message is: " + shiftedMessage)
