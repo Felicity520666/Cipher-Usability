@@ -16,3 +16,19 @@ The project could:
 ## Project Screenshot
 ![Project Screenshot](cipher-usability-screenshot.png)
 
+## Language Used
+- Python
+
+## How to Run the Project Locally
+1. Click the green **Code** button and then select **Download ZIP**.
+2. Unzip the downloaded folder.
+3. Open a terminal in the project folder.
+4. Run the command 
+```bash
+python main.py
+```
+## Creator
+- [@Felicity](https://github.com/Felicity520666)
+
+
+
