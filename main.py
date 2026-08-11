@@ -12,12 +12,19 @@ possibleCharacters = lettersLower + lettersUpper + numbers + symbols
 
 # Define the function called encryptOrDecrypt
 def encryptOrDecrypt():
+    global shiftedPosition
     if mode.lower() == "encrypt":
         shiftedPosition = initialPosition + key
     elif mode.lower() == "decrypt":
         shiftedPosition = initialPosition - key
 
 # Define the function called wraparound
+def wraparound():
+    global shiftedPosition
+    if shiftedPosition >= len(possibleCharacters):
+        shiftedPosition = shiftedPosition - len(possibleCharacters)
+    elif shiftedPosition < 0:
+        shiftedPosition = shiftedPosition + len(possibleCharacters)
 
 # Run code
 
