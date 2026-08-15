@@ -1,9 +1,9 @@
 # Cipher Usability
 ## About the Project
-This project is a pretty simple implementation of a Caesar Cipher. It allows the user to encrypt or decrypt a message by shifting the letters of the alphabet by a specified key value. The program also handles wraparound for letters that go beyond 'z' or before 'a'.
+This project is a pretty simple implementation of a Caesar cipher. It allows the user to encrypt or decrypt a message by shifting the letters of the alphabet by a specified key value. This program also handles wraparound for letters that go beyond 'z' or before 'a'.
 
 ## Features
-The project could:
+This project could:
 - Import the string library to access more characters.
 - Share an opening message with the user that describes what the program will do.
 - Include user input for the initialMessage (capital letters, lowercase letters, numbers, and keyboard symbols), the key, and the mode (encrypt or decrypt).
@@ -29,6 +29,7 @@ python main.py
 ```
 ## Creator
 - [@Felicity](https://github.com/Felicity520666)
+Feel free to provide feedback or suggestions for my improvement! I am always open to learning and growing as a developer.
 
 
 
